@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/cabecalho.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+  <title>MoviesFlix</title>
+
+
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <header>
+
+    <button type="button" class="clear" onclick="logout()">
+      Sair
+    </button>
+
+    <h1 class="cabecalho__titulo">Filmes Populares</h1>
+
+
+    <div class="cabecalho__pesquisa">
+      <input type="text" class="cabecalho__pesquisa-input" placeholder="Digite algum filme para pesquisar..." />
+      <span class="cabecalho__pesquisa-lupa">
+        <img src="img/search-icon.svg" alt="" />
+      </span>
+    </div>
+
+
+
+
+    <label class="cabecalho__checkbox">
+      <input type="checkbox" id="cabecalho__checkbox" />
+      Mostrar meus filmes favoritos apenas
+    </label>
+
+  </header>
+
+  <section id="filmes">
+  </section>
+  <section class="card__lista-vazia">Você ainda não adicionou nenhum filme a sua lista de favoritos!</section>
+
+</body>
+
+<link rel="stylesheet" href="../../global.css">
+<link rel="stylesheet" href="home.css">
+
+
+
+
+
+
+<script src="js/script.js" type="module"></script>
+<script src="js/filtro.js" type="module"></script>
+<script src="js/main.js" type="module"></script>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+<script src="../../firebase-init.js"></script>
+<script src="../../auth-guard.js"></script>
+<script src="../../loading.js"></script>
+<script src="home.js"></script>
+
+</html>
