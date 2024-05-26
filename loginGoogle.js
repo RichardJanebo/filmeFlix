@@ -15,6 +15,9 @@ const actionLoginGoogle = async ()=>{
         .signInWithPopup(provider)
         .then((result) => {
           /** @type {firebase.auth.OAuthCredential} */
+          
+          
+
           var credential = result.credential;
           var token = credential.accessToken;
           var user = result.user;
@@ -35,6 +38,14 @@ const actionLoginGoogle = async ()=>{
 }
 
 
+    
+
+  
+
+  
+  
+  
+  
 
 
 const btn_google = document.querySelector("#btn_google")

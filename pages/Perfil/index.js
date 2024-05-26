@@ -8,6 +8,8 @@ const profileName = document.querySelector("#profileName")
 
 
 
+
+
 btn_gerenciar.addEventListener("click", () => {
 
   if (container.style.display == "none") {
@@ -24,7 +26,7 @@ document.getElementById('profileForm').addEventListener('submit', (e) => {
 
 
 });
-document.querySelector("#delete_btn").addEventListener("click",()=>{
+document.querySelector("#delete_btn").addEventListener("click", () => {
   removeName(profileName.value)
 
 })
@@ -39,7 +41,7 @@ const loadPerfis = async () => {
       response.forEach((el) => {
         if (el.data().email == n_id) {
           addPerfis(el.data().perfil)
-          console.log("quantidade de perfil"+ el.data().perfil.length)
+          console.log("quantidade de perfil" + el.data().perfil.length)
         }
 
       })
@@ -48,7 +50,7 @@ const loadPerfis = async () => {
 }
 
 
-const removeName = async(p)=>{
+const removeName = async (p) => {
   const n_id = await usuId._delegate.currentUser.email
   console.log(getPerfis)
   getPerfis.get()
@@ -56,15 +58,15 @@ const removeName = async(p)=>{
       response.forEach((el) => {
         if (el.data().email == n_id) {
           const db = firebase.firestore()
-          db.collection("users").doc(el.id).update({perfil: firebase.firestore.FieldValue.arrayRemove(p)})
-          .then(()=>{
-            console.log("Documento atualizado")
-            loadPerfis()
-          })
-          .catch(()=>{
-            console.log("Documento não atualizado ")
-          })
-        
+          db.collection("users").doc(el.id).update({ perfil: firebase.firestore.FieldValue.arrayRemove(p) })
+            .then(() => {
+              console.log("Documento atualizado")
+              loadPerfis()
+            })
+            .catch(() => {
+              console.log("Documento não atualizado ")
+            })
+
 
         }
 
@@ -80,15 +82,15 @@ const setame = async (p) => {
       response.forEach((el) => {
         if (el.data().email == n_id) {
           const db = firebase.firestore()
-          db.collection("users").doc(el.id).update({perfil: firebase.firestore.FieldValue.arrayUnion(p)})
-          .then(()=>{
-            console.log("Documento atualizado")
-            loadPerfis()
-          })
-          .catch(()=>{
-            console.log("Documento não atualizado ")
-          })
-        
+          db.collection("users").doc(el.id).update({ perfil: firebase.firestore.FieldValue.arrayUnion(p) })
+            .then(() => {
+              console.log("Documento atualizado")
+              loadPerfis()
+            })
+            .catch(() => {
+              console.log("Documento não atualizado ")
+            })
+
 
         }
 
@@ -96,7 +98,7 @@ const setame = async (p) => {
     })
 
 
-    
+
 }
 
 
@@ -105,28 +107,46 @@ const setame = async (p) => {
 
 const addPerfis = (p) => {
   console.log(p[1])
-  profilesList.innerHTML=""
+  profilesList.innerHTML = ""
   console.log(p.length)
   let indice = 0
-  while (indice < p.length ) {
+  while (indice < p.length) {
     const perfil = document.createElement("div")
     perfil.setAttribute("class", "perfil")
+
     perfil.innerHTML = p[indice]
     profilesList.appendChild(perfil)
     indice++
   }
 
+  getAllPerfis()
+
+
 
 
 }
 
+const getAllPerfis = () => {
+  const selectPerfis = [...document.querySelectorAll(".perfil")]
+  selectPerfis.map((el) => {
+    el.addEventListener("click", () => {
+      exportPerfil(String(el.innerHTML))
+      window.location.href = "../home/home.html"
+    })
+  })
+  
+}
 
-
+const hoome = document.querySelector("#hoome")
+hoome.addEventListener("click",()=>{
+  window.location.href="../home/home.html"
+})
 
 window.addEventListener("load", () => {
   setTimeout(loadPerfis, 2000)
 
 })
+
 
 
 

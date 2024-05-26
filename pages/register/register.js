@@ -49,7 +49,7 @@ function register() {
         
         
         hideLoading();
-        window.location.href = "../../pages/home/home.html";
+        window.location.href = "../../pages/Perfil/index.html";
     }).catch(error => {
         hideLoading();
         alert(getErrorMessage(error));
