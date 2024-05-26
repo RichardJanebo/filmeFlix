@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div id="profilesList" class="profilesList">
+      
+    </div>
+    <div>
+      <button id="btn_gerenciar">Gerenciar Perfis</button>
+    </div>
+  </main>
+  <div class="container " style="display: none;">
+    <div id="profilesDiv">
+      <h3>Adicionar Novo Perfil</h3>
+      <form id="profileForm">
+        <input type="text" id="profileName" placeholder="Nome do Perfil" required>
+        <button id="add_btn">Adicionar</button>
+        
+
+      </form>
+      <button id="delete_btn">Excluir</button>
+     
+    </div>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+  <script src="../../firebase-init.js"></script>
+
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>

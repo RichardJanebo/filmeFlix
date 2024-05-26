@@ -98,3 +98,6 @@ function InserirFilmesNaTela(filmes) {
 }
 
 export {InserirFilmesNaTela}
+
+
+

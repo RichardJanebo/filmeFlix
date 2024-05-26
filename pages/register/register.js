@@ -39,6 +39,7 @@ function register() {
         nome:name,
         email:email,
         data_Nascim :dataNasc,
+        perfil: ["Padrão"],
 
     }
     createUserInDataBase(user)
