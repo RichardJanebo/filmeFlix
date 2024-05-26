@@ -130,7 +130,6 @@ const getAllPerfis = () => {
   const selectPerfis = [...document.querySelectorAll(".perfil")]
   selectPerfis.map((el) => {
     el.addEventListener("click", () => {
-      exportPerfil(String(el.innerHTML))
       window.location.href = "../home/home.html"
     })
   })
